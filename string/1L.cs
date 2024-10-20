@@ -31,8 +31,8 @@ namespace str2f
 			Console.WriteLine(multiline);
 			/*
 			 * To jest
-             *           wieloliniowy
-             *           ciąg znaków
+              		 *wieloliniowy
+		 	 *ciąg znaków
 			 */
 
 
@@ -40,29 +40,29 @@ namespace str2f
 			//Replace
 			string text = "programowanie obiektowe";
 			string newText = text.Replace("obiektowe", "strukturalne");
-            Console.WriteLine(newText);//programowanie strukturalne
+            		Console.WriteLine(newText);//programowanie strukturalne
 
 			newText = newText.Replace('e', 'E');
-            Console.WriteLine(newText);//programowaniE strukturalnE
+            		Console.WriteLine(newText);//programowaniE strukturalnE
 
 
 			//split
 			string sentence = "Franciszek,Nowak,Programista";
 			string[] words = sentence.Split(',');
-            foreach (string word in words)
-			{
-                Console.WriteLine(word);//Franciszek
-										//Nowak
-										//Programista
-            }
+            		foreach (string word in words)
+				{
+                			Console.WriteLine(word);//Franciszek
+								//Nowak
+								//Programista
+            			}
 
 			string sentence1 = "Janusz Nowak mieszka w Poznaniu";
 			string[] words1 = sentence1.Split(' ');
 			foreach(string word in words1)
 			{
-                Console.Write(word + '.');//Janusz.Nowak.mieszka.w.Poznaniu.
+                		Console.Write(word + '.');//Janusz.Nowak.mieszka.w.Poznaniu.
 			}
-            Console.WriteLine();
+            		Console.WriteLine();
 
 
             //split z wieloma opccjami
