@@ -29,3 +29,21 @@ Dodaj funkcje do formatowania tekstu:
 	Funkcja do formatowania imienia (pierwsza litera duża, reszta małe).
 	Funkcja do liczenia słów w tekście.
 	Funkcja do wyszukiwania i zamiany tekstu?
+
+
+Zadanie: Modyfikacja ciągu znaków
+Wprowadzenie ciągu znaków:
+Poproś użytkownika o wprowadzenie ciągu znaków.
+Menu operacji:
+Wyświetl menu z dostępnymi operacjami:
+Odwrócenie ciągu znaków
+Usunięcie samogłosek
+Zamiana małych liter na wielkie i odwrotnie
+Usunięcie spacji
+Wyjście
+Wybór operacji:
+Poproś użytkownika o wybór operacji z menu.
+Wykonanie operacji:
+Wykonaj wybraną operację na ciągu znaków i wyświetl wynik.
+Powtórzenie operacji:
+Zapytaj użytkownika, czy chce wykonać kolejną operację na tym samym ciągu znaków
