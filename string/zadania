@@ -1,0 +1,31 @@
+Zadanie: Zaawansowana Manipulacja Ciągami Znaków
+Opis: Napisz program, który pobiera od użytkownika różne dane tekstowe, a następnie wykonuje na nich różne operacje manipulacji ciągami znaków. Program powinien wyświetlać wyniki każdej operacji. Dodatkowo, program powinien zawierać funkcje do formatowania tekstu, liczenia słów, oraz wyszukiwania i zamiany tekstu.
+
+Instrukcje:
+
+Poproś użytkownika o wprowadzenie imienia i nazwiska:
+	Odczytaj wprowadzone imię i nazwisko z klawiatury.
+	Połącz imię i nazwisko w jeden ciąg i wyświetl pełne imię i nazwisko.
+Poproś użytkownika o wprowadzenie ścieżki do pliku:
+	Odczytaj wprowadzoną ścieżkę z klawiatury.
+	Wyświetl ścieżkę w dwóch formatach: z użyciem znaków ucieczki oraz jako literał dosłowny.
+Poproś użytkownika o wprowadzenie zdania:
+	Odczytaj wprowadzone zdanie z klawiatury.
+	Zamień wszystkie wystąpienia wybranego słowa na inne słowo i wyświetl wynik.
+	Podziel zdanie na słowa i wyświetl każde słowo w nowej linii.
+Poproś użytkownika o wprowadzenie kolejnego zdania:
+	Odczytaj wprowadzone zdanie z klawiatury.
+	Podziel zdanie na słowa, używając różnych separatorów (np. spacja, przecinek, średnik) i wyświetl każde słowo w nowej linii.
+Poproś użytkownika o wprowadzenie tekstu z nadmiarowymi spacjami:
+	Odczytaj wprowadzony tekst z klawiatury.
+	Usuń nadmiarowe spacje z początku i końca tekstu, a następnie wyświetl wynik.
+Poproś użytkownika o wprowadzenie listy elementów (np. owoców) oddzielonych przecinkami:
+	Odczytaj wprowadzoną listę z klawiatury.
+	Połącz elementy listy w jeden ciąg, używając różnych separatorów (np. przecinek, myślnik) i wyświetl wynik.
+Poproś użytkownika o wprowadzenie tekstu:
+	Odczytaj wprowadzony tekst z klawiatury.
+	Wykonaj na tekście różne operacje, takie jak: wyodrębnienie podciągu, zmiana wielkości liter, sprawdzenie, czy tekst zawiera określone słowo, oraz znalezienie indeksu określonego słowa.
+Dodaj funkcje do formatowania tekstu:
+	Funkcja do formatowania imienia (pierwsza litera duża, reszta małe).
+	Funkcja do liczenia słów w tekście.
+	Funkcja do wyszukiwania i zamiany tekstu?
