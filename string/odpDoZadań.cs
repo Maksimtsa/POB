@@ -131,8 +131,8 @@ namespace _2str
 
 
 
-
-                Console.ReadKey();
+            Console.ReadKey();
+                
         }
 
         private static object SearchAndReplace(string txtToSAR, string txtToS, string txtToR)
