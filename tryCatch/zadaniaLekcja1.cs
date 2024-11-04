@@ -115,9 +115,14 @@ namespace _2fstr
                 Console.WriteLine(promt);
 
                 if (double.TryParse(Console.ReadLine(), out double number) && number > 0)
-                {
-                    return number;
-                }
+                    if(number > 0)
+                        return number;
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Nieprawidłowa wartość, try again");
+                        Console.ResetColor();
+                    }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
