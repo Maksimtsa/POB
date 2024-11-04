@@ -17,6 +17,7 @@ namespace _2fstr
                 Console.WriteLine("1. Pole i obwód kwadratu");
                 Console.WriteLine("2. Pole i obwód prosokąta");
                 Console.WriteLine("3. Pole i obwód koła");
+                Console.WriteLine("4. Wyjście");
                 Console.WriteLine("twój wybór: ");
 
                 string choise = Console.ReadLine();
