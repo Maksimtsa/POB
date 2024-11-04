@@ -17,8 +17,9 @@ namespace _2fstr
                 Console.WriteLine("1. Pole i obwód kwadratu");
                 Console.WriteLine("2. Pole i obwód prosokąta");
                 Console.WriteLine("3. Pole i obwód koła");
-                Console.WriteLine("4. Wyjście");
-                Console.WriteLine("Twój wybór: ");
+                Console.WriteLine("4. Tryb testowy");
+                Console.WriteLine("5. Wyjście");
+                Console.WriteLine("twój wybór: ");
 
                 string choise = Console.ReadLine();
 
@@ -34,6 +35,9 @@ namespace _2fstr
                         DisplayCircleleCalculation();
                         break;
                     case "4":
+                        
+                        break;
+                    case "5":
                         return;
                     default:
                         Console.WriteLine("Nieprawidłowy wybór, try again");
@@ -42,6 +46,11 @@ namespace _2fstr
             }
         }
 
+
+        // funkcja do case 4 
+        //
+        //
+        //
         private static void DisplayCircleleCalculation()
         {
             double radius = GetPositiveNumber("podaj promien koła: ");
