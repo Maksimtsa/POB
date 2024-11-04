@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace _2fstr
     {
         static void Main(string[] args)
         {
-          //zad 1
             while (true)
             {
                 Console.WriteLine("Wybierz opcję: ");
@@ -26,6 +26,12 @@ namespace _2fstr
                     case "1":
                         DisplySquareCalculatiin();
                         break;
+                    case "2":
+                        DisplayRectangleCalculation();
+                        break;
+                    case "3":
+                        DisplayCircleleCalculation();
+                        break;
                     case "4":
                         return;
                     default:
@@ -35,12 +41,52 @@ namespace _2fstr
             }
         }
 
+        private static void DisplayCircleleCalculation()
+        {
+            double radius = GetPositiveNumber("podaj promien koła: ");
+            double area = CalculateCircleArea(radius);
+            double perimetr = CalculateCirclePerimetr(radius);
+            Console.WriteLine($"pole koła {Math.Round(area, 2)}");
+            Console.WriteLine($"obwód koła {Math.Round(perimetr, 2)}");
+        }
+
+        private static double CalculateCirclePerimetr(double radius)
+        {
+            return 2 * Math.PI * radius;
+        }
+
+        private static double CalculateCircleArea(double radius)
+        {
+            return Math.PI * radius;
+        }
+
+        private static void DisplayRectangleCalculation()
+        {
+            double height = GetPositiveNumber("pdoaj wysokość prostokąta");
+            double width = GetPositiveNumber("pdoaj szerokość prostokąta");
+            double area = CalculateRectangleArea(height, width);
+            double perimetr = CalculateRectanglePerimetr(height, width);
+            Console.WriteLine($"Pole prostokąta {Math.Round(area, 2)}");
+            Console.WriteLine($"Obwód kwadratu {Math.Round(perimetr, 2)}");
+
+        }
+
+        private static double CalculateRectanglePerimetr(double height, double width)
+        {
+            return 2 * (height * width);
+        }
+
+        private static double CalculateRectangleArea(double height, double width)
+        {
+            return height * width;
+        }
+
         private static void DisplySquareCalculatiin()
         {
             double side = GetPositiveNumber("Podaj długość boku kwadratu: ");
             (double area, double perimetr) = CalculateSquare(side);
-            Console.WriteLine($"Pole kwadratu wynosi {area}");
-            Console.WriteLine($"Obwód kwadratu wynosi {perimetr}");
+            Console.WriteLine($"Pole kwadratu wynosi {Math.Round(area, 2)}");
+            Console.WriteLine($"Obwód kwadratu wynosi {Math.Round(perimetr, 2)}");
         }
 
         private static (double area, double perimetr) CalculateSquare(double side)
@@ -66,7 +112,5 @@ namespace _2fstr
                 }
             }
         }
-      //zad 2
     }
 }
-
