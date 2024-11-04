@@ -35,7 +35,7 @@ namespace _2fstr
                     case "4":
                         return;
                     default:
-                        Console.WriteLine("Nieprawidłowy wybór");
+                        Console.WriteLine("Nieprawidłowy wybór, try again");
                         break;
                 }
             }
@@ -46,8 +46,10 @@ namespace _2fstr
             double radius = GetPositiveNumber("podaj promien koła: ");
             double area = CalculateCircleArea(radius);
             double perimetr = CalculateCirclePerimetr(radius);
-            Console.WriteLine($"pole koła {Math.Round(area, 2)}");
-            Console.WriteLine($"obwód koła {Math.Round(perimetr, 2)}");
+            Console.Write("Pole koła: ");
+            DisplayResult(Math.Round(area, 2));
+            Console.Write("Obwód koła");
+            DisplayResult(Math.Round(perimetr, 2));
         }
 
         private static double CalculateCirclePerimetr(double radius)
@@ -66,9 +68,17 @@ namespace _2fstr
             double width = GetPositiveNumber("pdoaj szerokość prostokąta");
             double area = CalculateRectangleArea(height, width);
             double perimetr = CalculateRectanglePerimetr(height, width);
-            Console.WriteLine($"Pole prostokąta {Math.Round(area, 2)}");
-            Console.WriteLine($"Obwód kwadratu {Math.Round(perimetr, 2)}");
+            Console.Write("Pole prostokąta: ");
+            DisplayResult(Math.Round(area, 2));
+            Console.Write("Obwód prostokąta: ");
+            DisplayResult(Math.Round(perimetr, 2));
+            
+        }
 
+        private static void DisplayResult(double result)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(result);
         }
 
         private static double CalculateRectanglePerimetr(double height, double width)
@@ -85,8 +95,10 @@ namespace _2fstr
         {
             double side = GetPositiveNumber("Podaj długość boku kwadratu: ");
             (double area, double perimetr) = CalculateSquare(side);
-            Console.WriteLine($"Pole kwadratu wynosi {Math.Round(area, 2)}");
-            Console.WriteLine($"Obwód kwadratu wynosi {Math.Round(perimetr, 2)}");
+            Console.Write("Pole kwadratu: ");
+            DisplayResult(Math.Round(area, 2));
+            Console.Write("Obwód kwadratu: ");
+            DisplayResult(Math.Round(perimetr, 2));
         }
 
         private static (double area, double perimetr) CalculateSquare(double side)
@@ -108,7 +120,9 @@ namespace _2fstr
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nieprawidłowa wartość, try again");
+                    Console.ResetColor();
                 }
             }
         }
