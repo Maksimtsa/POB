@@ -35,7 +35,7 @@ namespace _2fstr
                         DisplayCircleleCalculation();
                         break;
                     case "4":
-                        
+
                         break;
                     case "5":
                         return;
@@ -82,7 +82,7 @@ namespace _2fstr
             DisplayResult(Math.Round(area, 2));
             Console.Write("Obwód prostokąta: ");
             DisplayResult(Math.Round(perimetr, 2));
-            
+
         }
 
         private static void DisplayResult(double result)
@@ -93,7 +93,7 @@ namespace _2fstr
 
         private static double CalculateRectanglePerimetr(double height, double width)
         {
-            return 2 * (height * width);
+            return 2 * (height + width);
         }
 
         private static double CalculateRectangleArea(double height, double width)
@@ -118,11 +118,11 @@ namespace _2fstr
             return (area, perimetr);
         }
 
-        private static double GetPositiveNumber(string promt)
+        private static double GetPositiveNumber(string prompt)
         {
             while (true)
             {
-                Console.WriteLine(promt);
+                Console.WriteLine(prompt);
 
                 if (double.TryParse(Console.ReadLine(), out double number) && number > 0)
                     if(number > 0)
