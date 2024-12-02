@@ -52,8 +52,28 @@ namespace _02._12
                         }
                         break;
                     case 5:
+                        if (array != null)
+                        {
+                            SortArrayAscending(array);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tablica nie została utworzona.");
+                        }
+                        break;
+                    case 6:
+                        if (array != null)
+                        {
+                            SortArrayDesc(array);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tablica nie została utworzona.");
+                        }
+                        break;
+                    case 7:
                         exit = true;
-                        Console.WriteLine("Wyjście z programu...");
+                        Console.WriteLine("Wyjście z programu");
                         break;
                     default:
                         Console.WriteLine("Niepoprawny wybór, spróbuj ponownie.");
@@ -68,7 +88,7 @@ namespace _02._12
             Random rand = new Random();
             for (int i = 0; i < size; i++)
             {
-                array[i] = rand.Next(1, 101);
+                array[i] = rand.Next(1, 101); 
             }
             return array;
         }
@@ -78,11 +98,10 @@ namespace _02._12
             Random rand = new Random();
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next(1, 101);
+                array[i] = rand.Next(1, 101); 
             }
             Console.WriteLine("Tablica została wypełniona losowymi wartościami.");
         }
-
 
         static void FillArrayManually(int[] array)
         {
@@ -94,7 +113,6 @@ namespace _02._12
             Console.WriteLine("Tablica została wypełniona ręcznie podanymi wartościami.");
         }
 
-
         static void DisplayArray(int[] array)
         {
             Console.WriteLine("Zawartość tablicy:");
@@ -105,7 +123,6 @@ namespace _02._12
             Console.WriteLine();
         }
 
-
         static void DisplayMenu()
         {
             Console.WriteLine("Menu");
@@ -113,8 +130,25 @@ namespace _02._12
             Console.WriteLine("2. Wylosuj zawartość tablicy");
             Console.WriteLine("3. Dodaj wartości do tablicy");
             Console.WriteLine("4. Wyświetl tablicę");
-            Console.WriteLine("5. Wyjdź");
+            Console.WriteLine("5. Sortuj rosnąco");
+            Console.WriteLine("6. Sortuj malejąco");
+            Console.WriteLine("7. Wyjdź");
             Console.WriteLine("Wybierz opcję: ");
+        }
+
+        // Funkcja sortowania tablicy rosnąco
+        static void SortArrayAscending(int[] array)
+        {
+            Array.Sort(array);
+            Console.WriteLine("Tablica została posortowana rosnąco.");
+        }
+
+        // Funkcja sortowania tablicy malejąco
+        static void SortArrayDesc(int[] array)
+        {
+            Array.Sort(array);
+            Array.Reverse(array);
+            Console.WriteLine("Tablica została posortowana malejąco.");
         }
     }
 }
