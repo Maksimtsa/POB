@@ -70,7 +70,7 @@ namespace _02._12
                         {
                             Console.WriteLine("Tablica nie została utworzona.");
                         }
-                        break;
+                        break; 
                     case 7:
                         exit = true;
                         Console.WriteLine("Wyjście z programu");
