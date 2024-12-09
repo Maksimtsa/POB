@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _09._12._2024
 {
@@ -13,6 +14,7 @@ namespace _09._12._2024
             while (!exit)
             {
                 DisplayMenu();
+                Console.WriteLine("Twój wybór:");
                 string choice = Console.ReadLine();
 
                 switch (choice)
@@ -41,6 +43,15 @@ namespace _09._12._2024
                     case "8":
                         exit = true;
                         break;
+                    case "9":
+                        FindElementAt(list); // Added option to search for an element
+                        break;
+                    case "10":
+                        DisplayStat(list); // Added option to display statistics
+                        break;
+                    case "11":
+                        RemoveDuplicates(list); // Added option to remove duplicates
+                        break;
                     default:
                         Console.WriteLine("Nieprawidłowy wybór. Spróbuj ponownie.");
                         break;
@@ -59,6 +70,9 @@ namespace _09._12._2024
             Console.WriteLine("6. Posortuj nierosnąco");
             Console.WriteLine("7. Wyczyść listę");
             Console.WriteLine("8. Wyjdź");
+            Console.WriteLine("9. Wyszukiwanie w liscie");
+            Console.WriteLine("10. Statystyki");
+            Console.WriteLine("11. Usuń duplikaty z listy"); // New option to remove duplicates
         }
 
         static void AddElements(List<int> list)
@@ -74,7 +88,7 @@ namespace _09._12._2024
             Console.WriteLine("Ile losowych liczb chcesz dodać?");
             int count = int.Parse(Console.ReadLine());
             Random rand = new Random();
-            for (int i = 0; i < count; i++) 
+            for (int i = 0; i < count; i++)
             {
                 list.Add(rand.Next(1, 100));
             }
@@ -93,7 +107,7 @@ namespace _09._12._2024
             int index = int.Parse(Console.ReadLine());
             if (index >= 0 && index < list.Count)
             {
-                list.RemoveAt(index); 
+                list.RemoveAt(index);
                 Console.WriteLine("Element został usunięty z listy.");
             }
             else
@@ -134,6 +148,68 @@ namespace _09._12._2024
         {
             list.Clear();
             Console.WriteLine("Lista została wyczyszczona.");
+        }
+
+        static void FindElementAt(List<int> list)
+        {
+            Console.WriteLine("Podaj liczbę do wyszukiwania:");
+            int number = int.Parse(Console.ReadLine());
+
+            var indices = new List<int>();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == number)
+                {
+                    indices.Add(i);
+                }
+            }
+
+            if (indices.Count > 0)
+            {
+                Console.WriteLine($"Liczba {number} występuje w indeksach: {string.Join(", ", indices)}");
+            }
+            else
+            {
+                Console.WriteLine("Liczba nie występuje w liście.");
+            }
+        }
+
+        static void DisplayStat(List<int> list)
+        {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Lista jest pusta.");
+                return;
+            }
+
+            int count = list.Count;
+            int sum = list.Sum();
+            double average = list.Average();
+            int min = list.Min();
+            int max = list.Max();
+
+            Console.WriteLine("Statystyki:");
+            Console.WriteLine($"Liczba elementów: {count}");
+            Console.WriteLine($"Suma elementów: {sum}");
+            Console.WriteLine($"Średnia: {average}");
+            Console.WriteLine($"Minimum: {min}");
+            Console.WriteLine($"Maksimum: {max}");
+        }
+
+        static void RemoveDuplicates(List<int> list)
+        {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Lista jest pusta.");
+                return;
+            }
+
+
+            List<int> uniqueList = new List<int>(new HashSet<int>(list));
+            list.Clear();
+            list.AddRange(uniqueList);
+            Console.WriteLine("Duplikaty zostały usunięte z listy.");
         }
     }
 }
