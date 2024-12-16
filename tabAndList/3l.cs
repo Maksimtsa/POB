@@ -44,13 +44,13 @@ namespace _09._12._2024
                         exit = true;
                         break;
                     case "9":
-                        FindElementAt(list); // Added option to search for an element
+                        FindElementAt(list);
                         break;
                     case "10":
-                        DisplayStat(list); // Added option to display statistics
+                        DisplayStat(list);
                         break;
                     case "11":
-                        RemoveDuplicates(list); // Added option to remove duplicates
+                        RemoveDuplicates(list);
                         break;
                     default:
                         Console.WriteLine("Nieprawidłowy wybór. Spróbuj ponownie.");
@@ -72,7 +72,7 @@ namespace _09._12._2024
             Console.WriteLine("8. Wyjdź");
             Console.WriteLine("9. Wyszukiwanie w liscie");
             Console.WriteLine("10. Statystyki");
-            Console.WriteLine("11. Usuń duplikaty z listy"); // New option to remove duplicates
+            Console.WriteLine("11. Usuń duplikaty z listy");
         }
 
         static void AddElements(List<int> list)
