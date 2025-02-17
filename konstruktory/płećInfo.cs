@@ -117,6 +117,15 @@ namespace str
                 Console.WriteLine(person2.ToString());
 
                 Person newPerson = Person.inputPersonData();
+                if(newPerson == null)
+                {
+                    Console.WriteLine("\nDane osoby: ");
+                    Console.WriteLine(newPerson.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("\nNie udało się utworzyć osoby. Proszę spróbować ponownie");
+                }
             }
         }
     }
