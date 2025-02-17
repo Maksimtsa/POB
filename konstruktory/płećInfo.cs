@@ -62,7 +62,7 @@ namespace str
             return $"Osoba; {GetFullName()}, data urodzebia: {DateOfBirth: yyyy-MM-dd}, wiek: {Age}, płeć: {Gender}";
         }
 
-        public Person nputPersonData()
+        public Person inputPersonData()
         {
             Console.Write("podaj imie: ");
             string firstName = Console.ReadLine();
@@ -115,6 +115,8 @@ namespace str
 
                 Console.WriteLine("imie i nazwisko: " + person2.GetFullName());
                 Console.WriteLine(person2.ToString());
+
+                Person newPerson = Person.inputPersonData();
             }
         }
     }
