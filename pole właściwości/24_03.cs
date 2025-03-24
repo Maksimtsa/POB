@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 namespace polaWłaściwości
 {
     class Car
@@ -9,6 +11,7 @@ namespace polaWłaściwości
         // Prywatne pola dla właściwości
         private int _productionYear;
         private decimal _price;
+        private string _color;
 
         // Właściwości (properties) - kontrolują dostęp do danych
         public int ProductionYear
@@ -36,6 +39,32 @@ namespace polaWłaściwości
                     _price = value;
                 else
                     throw new ArgumentException("Cena nie może być ujemna");
+            }
+        }
+
+        public string Color
+        {
+            get { return _color; }
+            set
+            {
+                //lista dozwolonych kolorów
+                string[] allowedColors = { "niebieski", "czarny", "biały", "czerwony"};
+
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Kolor nie może byc pusty");
+                if (Array.IndexOf(allowedColors, value.ToLower()) == -1)
+                {
+                    string allowedColorsList = "";
+                    foreach(string color in allowedColors)
+                    {
+                        allowedColorsList += color + ", ";
+                    }
+
+                    allowedColorsList = allowedColorsList.TrimEnd(',', ' ');
+                    throw new ArgumentException($"Kolor musi być jednym z {allowedColorsList}");
+                }
+
+                _color = value.ToLower();
             }
         }
 
@@ -86,6 +115,29 @@ namespace polaWłaściwości
             //tworzene obiektu z urzyciem konstruktora z parametrami 
             Car car2 = new Car("BMW", "i5", 2022, 750000);
             car2.DisplayInfo();
+
+            //przykład błędu - próba ustawienia niepoprawnego roku
+
+            try
+            {
+                car2.ProductionYear = 1900;
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine($"Błąd: {ex.Message}");
+            }
+
+            //przykład błędu - próba ustawienia niepoprawnego koloru
+            try
+            {
+                car2.Color = "czarny";
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine($"Błąd: {ex.Message}");
+            }
+
+            Console.WriteLine(car1.Color);
         }
     }
 }
